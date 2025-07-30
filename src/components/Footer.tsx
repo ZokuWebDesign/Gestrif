@@ -33,7 +33,7 @@ const Footer = () => {
                   <a href="#desafios">Desafios</a>
                   <a href="#perfis">Perfis</a>
                   <a href="#sistema">Sistema</a>
-                  <a href="#contato">Contato</a>
+                  <a href="#contato">Contacto</a>
                   <a href="#faq">FAQs</a>
                 </div>
               </div>
@@ -49,10 +49,10 @@ const Footer = () => {
 
               {/* Atendimento */}
               <div className="flex flex-col gap-4">
-                <h3 className="text-[#FEFBFA] text-base leading-[28px] font-normal">Contato</h3>
+                <h3 className="text-[#FEFBFA] text-base leading-[28px] font-normal">Contacto</h3>
                 <div className="flex flex-col text-[#D5D0D7] text-sm leading-[38px] font-normal">
                   <a href="tel:08000029210">+244 953597249</a>
-                  <a href="tel:08000029210">+244 953597249</a>
+                  <a href="tel:08000029210">+244 923207304</a>
                   <a href="mailto:info@russyna.com">info@russyna.com</a>
                   <a href="https://www.russyna.com">www.russyna.com</a>
                 </div>
@@ -66,10 +66,10 @@ const Footer = () => {
       <div className="w-full bg-[#F2F2F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-14 py-[29px]">
           <p className="text-[#8A8A8A] text-[16px] text-center sm:hidden">
-            Gestrif 2025<br />CNPJ: 25.665.878/0001-02<br />todos os direitos reservados
+            GRussyna Business Net@2025<br />NIF: 5000696250<br />todos os direitos reservados
           </p>
           <p className="text-[#8A8A8A] text-[16px] text-center hidden sm:block">
-            Gestrif 2025 | CNPJ: 25.665.878/0001-02 - todos os direitos reservados
+            Russyna Business Net@2025 | NIF: 5000696250 - todos os direitos reservados
           </p>
         </div>
       </div>

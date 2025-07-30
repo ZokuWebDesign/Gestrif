@@ -61,7 +61,7 @@ const Forms = () => {
       setFormData(INITIAL_FORM_STATE);
     } catch (error) {
       console.error('Error sending email:', error);
-      toast.error('Erro ao solicitar contato. Por favor, tente novamente.');
+      toast.error('Erro ao solicitar contacto. Por favor, tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
