@@ -42,7 +42,7 @@ const Hero = () => {
             {/* Dashboard Preview */}
             <div className="w-full">
               <img
-                src={'https://i.imgur.com/kHTduRV.png'}
+                src={'https://i.imgur.com/vAju1Bo.png'} /* https://i.imgur.com/kHTduRV.png */
                 alt="Dashboard Preview"
                 className="w-full h-auto object-contain"
               />

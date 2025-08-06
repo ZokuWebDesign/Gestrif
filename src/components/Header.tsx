@@ -23,7 +23,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex text-white/50 font-medium">
             <a href="#inicio" className="hover:text-white transition-colors p-3">Início</a>
-            <a href="#planos" className="hover:text-white transition-colors p-3">Planos</a>
+            <a href="#planos" className="hover:text-white transition-colors p-3">Preço</a>
             <a href="#livro" className="hover:text-white transition-colors p-3">Livro de reclamações</a>
             <a href="#publi" className="hover:text-white transition-colors p-3">Publicações</a>
             <a href="#contato" className="hover:text-white transition-colors p-3">Contacto</a>
@@ -66,7 +66,7 @@ const Header = () => {
           <div className="md:hidden pt-4 border-t border-gray-100 text-white font-medium">
             <div className="flex flex-col">
               <a href="#inicio" className="py-2 px-2">Início</a>
-              <a href="#planos" className="py-2 px-2">Planos</a>
+              <a href="#planos" className="py-2 px-2">Preço</a>
               <a href="#livro" className="py-2 px-2">Livro de reclamações</a>
               <a href="#publi" className="py-2 px-2">Publicações</a>
               <a href="#contato" className="py-2 px-2">Contacto</a>
