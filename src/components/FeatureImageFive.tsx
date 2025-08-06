@@ -47,11 +47,11 @@ const ComplaintsTable: React.Component = () => {
           <div className="flex flex-col gap-8 items-center justify-start max-w-[820px] w-full">
             {/* Header Content */}
             <div className="flex flex-col gap-4 items-center justify-start w-full">
-              <h2 className="font-bold text-2xl sm:text-[38px] leading-[56px] text-primary text-center w-full">
+              <h2 className="font-bold text-2xl sm:text-[38px] leading-[140%] sm:leading-[56px] text-primary text-center w-full uppercase">
                 Substitua o risco operacional pelo controlo estratégico
               </h2>
-              <p className="text-base sm:text-[22px] text-[#5B5B5B] leading-[32px] text-center max-w-[1126px]">
-                Ferramentas de produtividade geral como o Excel e o E-mail não possuem a robustez e a segurança necessárias para a gestão de processos críticos e regulamentados. A sua equipa merece uma plataforma especializada. A sua equipa necessita de uma solução desenhada para a complexidade da nova exigência de gestão de reclamações, de modo a  minimizar o risco e maximizar a eficiência.
+              <p className="text-base sm:text-[22px] text-[#5B5B5B] leading-[160%] sm:leading-[32px] text-center max-w-[1126px]">
+                Ferramentas de produtividade geral como o Excel e o E-mail não possuem a robustez e a segurança necessárias para a gestão de processos críticos e regulamentados. A sua equipa merece uma plataforma especializada. A sua equipa necessita de uma solução desenhada para a complexidade da nova exigência de gestão de reclamações, de modo a minimizar o risco e maximizar a eficiência.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ const ComplaintsTable: React.Component = () => {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {complaints.map((complaint, index) => (
                     <tr key={index} className="hover:bg-gray-50">
-                      <td className="w-[calc(50%-2rem)] px-6 py-3">
+                      <td className="w-[calc(50%-1.5rem)] px-6 py-3">
                         <div className="text-xs text-gray-900 opacity-80 leading-[160%] break-words">
                           {complaint.problem}
                         </div>
@@ -90,7 +90,7 @@ const ComplaintsTable: React.Component = () => {
                           <img src={icon} alt="check" className="w-6 h-6" />
                         </div>
                       </td>
-                      <td className="w-[calc(50%-2rem)] px-6 py-3">
+                      <td className="w-[calc(50%-1.5rem)] px-6 py-3">
                         <div className="text-xs text-gray-900 opacity-80 leading-[160%] break-words">
                           {complaint.solution}
                         </div>

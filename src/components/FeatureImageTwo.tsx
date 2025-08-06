@@ -14,25 +14,25 @@ const FeatureImageTwo = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-4 w-full">
+            <div className="w-full flex overflow-x-auto items-center justify-start">
               {/* CTA Button */}
-              <button className="w-full p-0">
-                <a className="block w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
+              <button className="w-max sm:w-full p-0">
+                <a className="block w-max sm:w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
                   Fazer reclamação
                 </a>
               </button>
-              <button className="w-full p-0">
-                <a className="block w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
+              <button className="w-max sm:w-full p-0">
+                <a className="block w-max sm:w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
                   Consultar reclamação
                 </a>
               </button>
-              <button className="w-full p-0">
-                <a className="block w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
+              <button className="w-max sm:w-full p-0">
+                <a className="block w-max sm:w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
                   Elogiar ou sugerir
                 </a>
               </button>
-              <button className="w-full p-0">
-                <a className="block w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
+              <button className="w-max sm:w-full p-0">
+                <a className="block w-max sm:w-full text-base text-[#555555] hover:text-secondary font-bold px-6 py-3 sm:px-0">
                   Pedir informações
                 </a>
               </button>

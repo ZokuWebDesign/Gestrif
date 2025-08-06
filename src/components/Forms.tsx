@@ -160,7 +160,7 @@ const Forms = () => {
                 <div className="pt-2 w-full flex justify-end">
                   <Button 
                     type="submit" 
-                    className="w-[216px] h-auto p-2 bg-secondary hover:bg-secondary/90 text-white font-semibold text-lg"
+                    className="w-full sm:w-[216px] h-auto p-2 bg-secondary hover:bg-secondary/90 text-white font-semibold text-lg"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Enviando...' : 'Solicitar contato'}
