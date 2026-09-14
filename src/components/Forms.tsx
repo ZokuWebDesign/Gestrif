@@ -74,7 +74,7 @@ const Forms = () => {
           {/* Image Section */}
           <div className="relative">
             <img
-              src="https://i.imgur.com/pKkORYt.jpeg"
+              src="https://cdn.sydapp.com.br/gestrif.com/pKkORYt.webp"
               alt="Escritório"
               className="w-full h-[340px] sm:h-[484px] object-cover"
             />

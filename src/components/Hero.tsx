@@ -8,7 +8,7 @@ const Hero = () => {
       <div
         className="relative w-full z-0"
         style={{
-          backgroundImage: `url('https://i.imgur.com/KYdRDyJ.jpeg')`,
+          backgroundImage: `url('https://cdn.sydapp.com.br/gestrif.com/KYdRDyJ.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -42,7 +42,7 @@ const Hero = () => {
             {/* Dashboard Preview */}
             <div className="w-full">
               <img
-                src={'https://i.imgur.com/vAju1Bo.png'} /* https://i.imgur.com/kHTduRV.png */
+                src={'https://cdn.sydapp.com.br/gestrif.com/vAju1Bo.webp'} /* https://cdn.sydapp.com.br/gestrif.com/kHTduRV.webp */
                 alt="Dashboard Preview"
                 className="w-full h-auto object-contain"
               />

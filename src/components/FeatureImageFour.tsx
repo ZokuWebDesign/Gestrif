@@ -18,7 +18,7 @@ const FeatureImageTwo = () => {
               
               {/* Illustration */}
               <img 
-                src="https://i.imgur.com/5DBtrKS.jpeg"
+                src="https://cdn.sydapp.com.br/gestrif.com/5DBtrKS.webp"
                 alt="Illustration"
                 className="h-[320px] sm:w-[calc(50%-1.5rem)] h-auto object-contain"
               />
@@ -37,12 +37,12 @@ const FeatureImageTwo = () => {
 
                 <div className="flex flex-row items-center justify-center w-full">
                   <img 
-                    src="https://i.imgur.com/0XhcVx1.jpeg"
+                    src="https://cdn.sydapp.com.br/gestrif.com/0XhcVx1.webp"
                     alt="Illustration"
                     className="w-[calc(50%)] min-h-[140px] object-contain"
                   />
                   <img 
-                    src="https://i.imgur.com/DBQTiYQ.jpeg"
+                    src="https://cdn.sydapp.com.br/gestrif.com/DBQTiYQ.webp"
                     alt="Illustration"
                     className="w-[calc(50%)] min-h-[140px] object-contain"
                   />

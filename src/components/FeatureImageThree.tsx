@@ -19,7 +19,7 @@ const FeatureImageTwo = () => {
           {/* Left side - Illustration */}
           <div className="max-w-[256px] sm:max-w-[364px] ml-4">
             <img
-              src="https://i.imgur.com/3LabLwy.png"
+              src="https://cdn.sydapp.com.br/gestrif.com/3LabLwy.webp"
               alt="Homem segurando lapis"
               className="w-full h-auto"
             />

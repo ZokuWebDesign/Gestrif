@@ -4,7 +4,7 @@ Welcome to **Gestrif – Your Business Backoffice, Reinvented**, an all-in-one d
 
 You can access the [project's live website here](https://gestrif.com/).
 
-![Project's Cover](https://i.imgur.com/khtHo1T.png)
+![Project's Cover](https://cdn.sydapp.com.br/gestrif.com/khtHo1T.webp)
 
 > Gestrif empowers entrepreneurs with a modern, cloud-based system to organize, operate, and grow — all from a single, intuitive interface.
 

@@ -8,7 +8,7 @@ const FeatureImageTwo = () => {
           {/* Left side - Illustration */}
           <div className="relative w-full max-w-[256px] sm:max-w-[483px] mx-auto">
             <img
-              src="https://i.imgur.com/ejJTybe.png"
+              src="https://cdn.sydapp.com.br/gestrif.com/ejJTybe.webp"
               alt="Woman checking WhatsApp notifications"
               className="w-full h-auto"
             />

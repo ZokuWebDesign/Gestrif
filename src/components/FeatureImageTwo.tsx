@@ -40,7 +40,7 @@ const FeatureImageTwo = () => {
 
             {/* Dashboard Preview */}
             <img 
-              src="https://i.imgur.com/j6E4dwT.jpeg"
+              src="https://cdn.sydapp.com.br/gestrif.com/j6E4dwT.webp"
               alt="Dashboard Preview"
               className="h-[320px] sm:h-[500px] lg:h-[723px] shadow-[0px_-4px_16px_0px_rgba(0,0,0,0.16)] object-contain"
             />
