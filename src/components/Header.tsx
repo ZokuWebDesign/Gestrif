@@ -34,7 +34,7 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <Button className="p-0 h-auto">
               <a
-                href="#"
+                href="/cadastro"
                 className="w-full py-3 px-6 text-lg text-white font-semibold"
               >
                 Assinar um plano
@@ -42,7 +42,7 @@ const Header = () => {
             </Button>
             <Button className="p-0 h-auto">
               <a
-                href="#"
+                href="/login"
                 className="w-full py-3 px-6 text-lg text-white font-semibold"
               >
                 Login
@@ -74,7 +74,7 @@ const Header = () => {
               <div className="flex flex-col space-y-2 pt-4">
                 <Button className="py-3 gap-1.5 text-white text-base font-semibold h-auto">
                   <a 
-                    href="#"
+                    href="/cadastro"
                     className="flex items-center justify-center"
                   >
                     Assinar um plano
@@ -82,7 +82,7 @@ const Header = () => {
                 </Button>
                 <Button className="py-3 text-white text-base font-semibold h-auto">
                   <a 
-                    href="#"
+                    href="/login"
                     className="flex items-center justify-center"
                   >
                     Login

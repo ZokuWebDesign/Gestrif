@@ -140,6 +140,11 @@ h4 {
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   * {
     @apply border-border;
   }

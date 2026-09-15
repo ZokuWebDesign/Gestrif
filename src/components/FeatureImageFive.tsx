@@ -41,7 +41,7 @@ const ComplaintsTable: React.Component = () => {
   ];
 
   return (
-    <section id="livro" className="bg-white relative w-full">
+    <section className="bg-white relative w-full">
       <div className="flex flex-col items-center">
         <div className="box-border flex flex-col items-center justify-start px-4 sm:px-14 py-0 sm:py-[70px] w-full">
           <div className="flex flex-col gap-8 items-center justify-start max-w-[820px] w-full">

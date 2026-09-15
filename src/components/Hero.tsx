@@ -4,7 +4,7 @@ import CrawlingBanner from "@/components/CrawlingBanner";
 
 const Hero = () => {
   return (
-    <section className="bg-white relative">
+    <section id="inicio" className="bg-white relative">
       <div
         className="relative w-full z-0"
         style={{

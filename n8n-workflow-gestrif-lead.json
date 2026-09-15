@@ -1,0 +1,147 @@
+{
+  "name": "Gestrif — Captura de Leads (Form)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "gestrif-lead",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "id": "wh_gestrif_lead",
+      "name": "Webhook Gestrif Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        240,
+        300
+      ],
+      "webhookId": "gestrif-lead-webhook"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Lead recebido com sucesso no Gestrif!\",\n  \"timestamp\": \"{{ $now.toISO() }}\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "resp_gestrif",
+      "name": "Responder Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $('Webhook Gestrif Lead').item.json.body || $('Webhook Gestrif Lead').item.json || {};\n\n// Helper: Title Case\nfunction toTitleCase(str) {\n  if (!str) return '';\n  const stopWords = ['de', 'da', 'do', 'dos', 'das', 'e', 'em', 'para', 'com'];\n  return str\n    .trim()\n    .split(/\\s+/)\n    .filter(Boolean)\n    .map((w, idx) => {\n      const lower = w.toLowerCase();\n      if (idx > 0 && stopWords.includes(lower)) return lower;\n      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();\n    })\n    .join(' ');\n}\n\n// 1. Column A: Unique Lead ID (e.g. GEST-9B4X2Z)\nconst id = 'GEST-' + Math.random().toString(36).substring(2, 8).toUpperCase();\n\n// 2. Column B: Formatted Date/Time (DD/MM/YYYY HH:mm:ss)\nconst now = new Date();\nconst data = now.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit'\n}).replace(',', '');\n\n// 3. Column C: Name (Clean Title Case)\nconst nome = toTitleCase(body.name || '');\n\n// 4. Column D: Institution (Clean Title Case or Default)\nconst instituicao = toTitleCase(body.institution || '') || 'Não informada';\n\n// 5. Column E: E-mail (Trim & Lowercase)\nconst email = String(body.email || '').trim().toLowerCase();\n\n// 6. Column F: Phone (Formatted with leading apostrophe ' to force Sheets text formatting)\nlet rawPhone = String(body.phone || '').trim();\nlet formattedPhone = rawPhone;\nif (rawPhone && !rawPhone.startsWith('+') && rawPhone.replace(/\\D/g, '').length >= 9) {\n  formattedPhone = '+' + rawPhone;\n}\n// Prepend single quote (') so Google Sheets never evaluates it as a formula\nconst telefone = formattedPhone ? (\"'\" + formattedPhone.replace(/^'+/, '')) : '';\n\n// 7. Column G: Origin\nconst origem = body.source ? String(body.source).trim() : 'Website Gestrif';\n\n// Return STRICTLY columns A~G:\nreturn {\n  json: {\n    \"id\": id,\n    \"Data\": data,\n    \"Nome\": nome,\n    \"Instituição\": instituicao,\n    \"E-mail\": email,\n    \"Telefone\": telefone,\n    \"Origem\": origem\n  }\n};"
+      },
+      "id": "fmt_gestrif_lead",
+      "name": "Formatar Lead",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1Qsplh_AcMSPJY0eNVAnYQaS3M9cUpP81mlcbSWiocKc"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "CRM - Landing Page"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData"
+        },
+        "options": {}
+      },
+      "id": "gs_gestrif_lead",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        360
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Tm9HcpWlfzugIYgh",
+          "name": "jaypy.uxdesign — Google Sheets"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "info@russyna.com",
+        "subject": "=Novo Lead Gestrif: {{ $(\"Formatar Lead\").item.json.Nome }} ({{ $(\"Formatar Lead\").item.json[\"Instituição\"] }})",
+        "emailType": "html",
+        "message": "<h2>Novo contato via formulário Gestrif</h2><p><strong>Nome:</strong> {{ $(\"Formatar Lead\").item.json.Nome }}</p><p><strong>Instituição:</strong> {{ $(\"Formatar Lead\").item.json[\"Instituição\"] }}</p><p><strong>Email:</strong> {{ $(\"Formatar Lead\").item.json[\"E-mail\"] }}</p><p><strong>Telefone:</strong> {{ $(\"Formatar Lead\").item.json.Telefone.replace(/^\\x27/, \"\") }}</p><p><strong>Data:</strong> {{ $(\"Formatar Lead\").item.json.Data }}</p>",
+        "options": {}
+      },
+      "id": "gmail_gestrif_lead",
+      "name": "Encaminhar Gmail (info@russyna.com)",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        520
+      ],
+      "disabled": true
+    }
+  ],
+  "connections": {
+    "Webhook Gestrif Lead": {
+      "main": [
+        [
+          {
+            "node": "Responder Webhook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Formatar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatar Lead": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Encaminhar Gmail (info@russyna.com)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}
